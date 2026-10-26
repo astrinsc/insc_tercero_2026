@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Fase 4 – Revisión y plan de mejora</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f7f6f2;--card:#fff;--ink:#1d2433;--mute:#5d6678;--acc:#1f6feb;--acc2:#e8f0fe;--line:#dcdfe6;--ok:#1a7f4b}
+@media (prefers-color-scheme:dark){:root{--bg:#12161f;--card:#1b2130;--ink:#e8ebf2;--mute:#9aa4b8;--acc:#6aa3ff;--acc2:#22304d;--line:#2d3649;--ok:#4cc38a}}
+html{scroll-padding-top:70px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{background:var(--acc);color:#fff;padding:30px 20px;text-align:center}
+header a{color:#fff;opacity:.9;font-size:.9rem}
+header small{opacity:.9;letter-spacing:.08em;text-transform:uppercase}
+header h1{margin:6px 0 4px;font-size:1.7rem;line-height:1.25}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--card);border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto;padding:8px 12px;justify-content:center}
+nav a{white-space:nowrap;color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:99px;font-size:.9rem}
+nav a:hover{background:var(--acc2)}
+nav a.home{font-weight:700;color:var(--acc)}
+main{max-width:820px;margin:0 auto;padding:20px 16px 60px}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin:18px 0}
+h2{margin:0 0 10px;font-size:1.35rem}
+h3{margin:18px 0 6px;font-size:1.1rem;color:var(--acc)}
+label{display:block;font-weight:600;margin:14px 0 4px;font-size:.95rem}
+input,textarea,select{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 11px}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--acc);border-color:transparent}
+textarea{min-height:76px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.it{display:grid;grid-template-columns:1fr 160px;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid var(--line)}
+@media(max-width:560px){.row,.it{grid-template-columns:1fr}}
+.br{border:1px dashed var(--line);border-radius:10px;padding:4px 12px 12px;margin:12px 0}
+.bar{background:var(--acc2);border-radius:99px;height:14px;overflow:hidden}
+.bar div{height:100%;background:var(--ok)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+button{font:inherit;font-weight:600;border:0;border-radius:10px;padding:11px 18px;cursor:pointer;background:var(--acc);color:#fff}
+button.alt{background:var(--acc2);color:var(--acc)}
+#msg{margin-top:12px;min-height:1.4em;color:var(--ok);font-weight:600}
+#msg.err{color:#d1453b}
+.pie-nav{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;margin-top:22px}
+.pie-nav a{text-decoration:none;font-weight:600;border-radius:10px;padding:11px 18px;background:var(--acc2);color:var(--acc)}
+footer{text-align:center;color:var(--mute);font-size:.85rem;padding:0 16px 30px;line-height:1.7}
+.pv{display:none}
+@media print{
+ nav,.btns,.pie-nav,#msg,header a{display:none!important}
+ body{background:#fff;color:#000;font-size:12pt}
+ header{background:#fff;color:#000;padding:0 0 10pt;border-bottom:1px solid #999}
+ main{max-width:none;padding:0}
+ section{border:0;border-radius:0;padding:0;margin:0 0 14pt;break-inside:auto}
+ h2,h3{break-after:avoid}
+ p,li,.it,.br{break-inside:avoid}
+ input,textarea,select{display:none!important}
+ .it{grid-template-columns:1fr 130px}
+ .pv{display:block;white-space:pre-wrap;overflow-wrap:anywhere;border:1px solid #999;border-radius:6px;padding:6px 9px;margin:0 0 6pt}
+}
+</style>
+</head>
+<body>
+<header><a href="index.html">← Todas las fases</a><br><small>Soluciones con sentido: innovación para mi comunidad · Fase 4</small><h1>Revisión y plan de mejora</h1><div>Educación Tecnológica y Ciencias de la Computación · 3.er Año A / B</div></header>
+<nav><a class="home" href="index.html">← Fases</a><a href="#s0">Para qué sirve</a><a href="#eq">Equipo</a><a href="#rev">Revisión</a><a href="#fund">Fase 1</a><a href="#plan">Plan</a></nav>
+<main>
+<div id="content"></div>
+<section id="eq">
+<h2>Equipo</h2>
+<div class="row"><div><label for="curso">Curso</label><input id="curso"></div><div><label for="coord">Coordinador/a</label><input id="coord"></div></div>
+<label for="equipo">Integrantes (nombres)</label><textarea id="equipo" style="min-height:60px"></textarea>
+</section>
+<section id="rev"><h2>✅ Tablero de revisión</h2><div id="prog"></div><div id="checks"></div></section>
+<section id="fund">
+<h2>📝 Fundamentación del problema (Fase 1)</h2>
+<p>Completen o corrijan acá lo que haya quedado pendiente de la Fase 1.</p>
+<label for="f1a">¿Cuál es el problema exacto?</label><textarea id="f1a"></textarea>
+<label for="f1b">¿A quiénes afecta?</label><textarea id="f1b"></textarea>
+<label for="f1c">¿Por qué es importante resolverlo?</label><textarea id="f1c"></textarea>
+<label for="f1d">Viabilidad: ¿tenemos los recursos, los conocimientos y el tiempo?</label><textarea id="f1d"></textarea>
+<label for="f1e">Impacto social y sostenibilidad: ¿a quién ayuda y cómo cuida el entorno?</label><textarea id="f1e"></textarea>
+</section>
+<section id="plan">
+<h2>🛠 Plan de correcciones</h2>
+<p>Todo lo que no quedó en "Listo" se anota acá.</p>
+<div id="cor"></div>
+<div class="btns"><button class="alt" id="cAdd">+ Agregar corrección</button></div>
+<label for="dudas">Dudas para consultar con la docente</label><textarea id="dudas"></textarea>
+<div class="btns">
+<button id="bDocx">⬇ Guardar en Word (.docx)</button>
+<button id="bPrint">🖨 Guardar como PDF</button>
+<button id="bTxt" class="alt">⬇ Texto (.txt)</button>
+<button id="bClear" class="alt">Borrar</button>
+</div>
+<p style="font-size:.9rem;color:var(--mute)">Para el PDF: en el cuadro de impresión que se abre, elegí <strong>Guardar como PDF</strong> como destino.</p>
+<div id="msg" role="status"></div>
+<div class="pie-nav"><a href="fase3.html">← Fase 3</a><a href="index.html">Todas las fases</a></div>
+</section>
+</main>
+<footer>Fase 4 · Instituto Nuestra Señora del Carmen · Uso exclusivo institucional<br>Diseñado por Esp. Ing. Astri Edith Andrada Tivani · 3.er año, nivel secundario</footer>
+<script>
+const DOC_TITLE="Fase 4 - Revisión y plan de mejora";
+const C=[
+{t:'h2',id:'s0',x:'¿Para qué sirve esta fase?'},
+{t:'p',x:'Es un **punto de control**: sirve para ver **en qué parte del proyecto están** y detectar qué conviene **corregir de las fases anteriores** antes de la presentación final (IPI). No es una etapa más para calificar: ayuda a llegar mejor a las tres instancias del núcleo (Fases 1 y 2, Fase 3 e IPI).'},
+{t:'ul',i:['Marquen cada ítem como **Listo**, **En proceso** o **Falta**.','Lo que no esté en "Listo" pasa al **Plan de correcciones**: qué se corrige, quién lo hace y para cuándo.','Completen la fundamentación del problema si les quedó pendiente de la Fase 1.','Al terminar, descarguen el archivo en Word o PDF y entréguenlo como indique la docente.']}
+];
+const SEC=[
+['Fase 1 · Identificación del problema',['Elegimos un problema de la escuela o la comunidad','Describimos el problema con claridad','Sabemos a quiénes afecta','Explicamos por qué es importante resolverlo','Analizamos la viabilidad (recursos, conocimientos y tiempo)','Analizamos el impacto social y la sostenibilidad']],
+['Fase 2 · Diseño de la solución y uso de IA',['Tenemos el diagrama de flujo con la simbología correcta','Tenemos el pseudocódigo completo','Usamos condicionales y bucles en el diseño','Redactamos prompts con la estructura R.C.I.F.','La bitácora de uso de IA está al día','Definimos coordinador/a y roles con responsabilidades escritas']],
+['Fase 3 · Prototipado y prueba',['Las variables tienen nombres significativos','Dividimos la solución en módulos','Usamos al menos una estructura de control','Incluimos un evento (si corresponde)','El prototipo funciona','Registramos las pruebas realizadas','Encontramos al menos un error o mejora y lo corregimos']],
+['Uso ético y responsable de la IA',['Verificamos las respuestas de la IA antes de usarlas','Las decisiones las tomó el grupo','No cargamos datos personales en la IA','Registramos todo uso de IA en la bitácora']],
+['Preparación de la presentación final (IPI)',['Cada integrante puede explicar el problema','Cada integrante puede explicar la solución','Cada integrante puede explicar cómo funciona el prototipo','Cada integrante puede explicar cómo se usó la IA','Ensayamos la presentación']],
+['Trabajo en equipo',['Cada integrante tiene su responsabilidad escrita','Cumplimos las tareas asignadas','Participamos todos']]
+];
+const $=id=>document.getElementById(id);
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const md=s=>esc(s).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
+const plain=s=>s.replace(/\*\*/g,'');
+(function(){
+ let h='';
+ for(const b of C){
+  if(b.t==='h2')h+=`<section id="${b.id}"><h2>${md(b.x)}</h2>`;
+  else if(b.t==='p')h+=`<p>${md(b.x)}</p>`;
+  else if(b.t==='ul')h+='<ul>'+b.i.map(i=>`<li>${md(i)}</li>`).join('')+'</ul></section>';
+ }
+ $('content').innerHTML=h;
+})();
+const ITEMS=[];let q=0;
+$('checks').innerHTML=SEC.map(([t,a])=>`<h3>${t}</h3>`+a.map(x=>{const i='k'+(q++);ITEMS.push([t,x,i]);return `<div class="it"><span>${x}</span><select id="${i}"><option value="">— marcar —</option><option>Listo</option><option>En proceso</option><option>Falta</option></select></div>`}).join('')).join('');
+
+/* ---- datos ---- */
+const F=['curso','coord','equipo','f1a','f1b','f1c','f1d','f1e','dudas',...ITEMS.map(z=>z[2])];
+const L={equipo:'Integrantes',f1a:'Descripción exacta del problema',f1b:'A quiénes afecta',f1c:'Por qué es importante resolverlo',f1d:'Viabilidad: recursos, conocimientos y tiempo',f1e:'Impacto social y sostenibilidad',dudas:'Dudas para consultar con la docente'};
+const CL=['Qué vamos a corregir','Fase','Quién lo hace','Para cuándo'];
+function mk(box,labels,tas){
+ const el=$(box);
+ const num=()=>el.querySelectorAll('.n').forEach((s,k)=>s.textContent=k+1);
+ const add=(v=[])=>{const d=document.createElement('div');d.className='br';d.innerHTML='<label>Corrección <span class="n"></span></label>'+labels.map((l,k)=>`<label>${l}</label>${tas.includes(k)?'<textarea></textarea>':'<input>'}`).join('');d.querySelectorAll('input,textarea').forEach((e,k)=>{e.value=v[k]||'';e.addEventListener('input',save)});el.appendChild(d);num()};
+ const get=()=>[...el.querySelectorAll('.br')].map(d=>[...d.querySelectorAll('input,textarea')].map(e=>e.value.trim()));
+ return{add,get,el};
+}
+const Cor=mk('cor',CL,[0]);
+const COL={Listo:'#1a7f4b','En proceso':'#d99a00',Falta:'#d1453b'};
+function paint(){ITEMS.forEach(z=>{const e=$(z[2]),c=COL[e.value];e.style.borderColor=c||'';e.style.borderWidth=c?'2px':''})}
+function prog(){
+ const s=ITEMS.map(z=>$(z[2]).value),n=s.length,l=s.filter(x=>x==='Listo').length,p=s.filter(x=>x==='En proceso').length,f=s.filter(x=>x==='Falta').length,pc=Math.round(100*l/n);
+ $('prog').innerHTML=`<div class="bar"><div style="width:${pc}%"></div></div><p><strong>${pc}% listo</strong> · ${l} Listo · ${p} En proceso · ${f} Falta · ${n-l-p-f} sin marcar</p>`;
+ return `${l} de ${n} ítems Listos (${pc}%) · En proceso: ${p} · Falta: ${f} · Sin marcar: ${n-l-p-f}`;
+}
+function save(){try{localStorage.setItem('n4f4',JSON.stringify({f:Object.fromEntries(F.map(k=>[k,$(k).value])),c:Cor.get()}))}catch(e){}}
+try{const s=JSON.parse(localStorage.getItem('n4f4')||'{}');F.forEach(k=>{if(s.f&&s.f[k])$(k).value=s.f[k]});(s.c||[]).forEach(r=>Cor.add(r))}catch(e){}
+if(!Cor.el.querySelector('.br'))Cor.add();
+F.forEach(k=>$(k).addEventListener('input',()=>{save();prog();paint()}));
+$('cAdd').onclick=()=>{Cor.add();save()};
+prog();paint();
+function answers(){
+ const g=k=>$(k).value.trim()||'(sin completar)',o=[];
+ o.push(['#Equipo',''],['Curso',g('curso')],['Coordinador/a',g('coord')],['Integrantes',g('equipo')]);
+ o.push(['#Estado de avance',''],['Avance general',prog()]);
+ let last='';ITEMS.forEach(([t,x,i])=>{if(t!==last){o.push(['#Revisión · '+t,'']);last=t}o.push([x,$(i).value||'(sin marcar)'])});
+ o.push(['#Fundamentación del problema (Fase 1)','']);['f1a','f1b','f1c','f1d','f1e'].forEach(k=>o.push([L[k],g(k)]));
+ o.push(['#Plan de correcciones','']);
+ Cor.get().forEach((r,n)=>o.push(['Corrección '+(n+1),CL.map((l,k)=>l+': '+(r[k]||'—')).join(' | ')]));
+ o.push([L.dudas,g('dudas')]);
+ return o;
+}
+
+/* ---- exportadores ---- */
+function toTxt(){
+ let o=DOC_TITLE.toUpperCase()+'\n'+'='.repeat(40)+'\n';
+ for(const b of C){
+  if(b.t==='h2')o+='\n'+plain(b.x).toUpperCase()+'\n';
+  else if(b.t==='p')o+=plain(b.x)+'\n';
+  else if(b.t==='ul')o+=b.i.map(i=>'  • '+plain(i)).join('\n')+'\n';
+ }
+ o+='\n\nMI REVISIÓN\n'+'='.repeat(40)+'\n';
+ answers().forEach(([l,v])=>{o+=l[0]==='#'?'\n'+l.slice(1)+'\n':'\n'+l+':\n'+v+'\n'});
+ return o+'\nFecha: '+new Date().toLocaleDateString('es-AR')+'\n';
+}
+const X=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+function runs(s,o={}){
+ return s.split(/\*\*/).map((t,i)=>{if(!t)return'';const b=(i%2||o.b)?'<w:b/>':'';const c=o.c?`<w:color w:val="${o.c}"/>`:'';const z=o.sz?`<w:sz w:val="${o.sz}"/>`:'';return `<w:r><w:rPr>${b}${c}${z}</w:rPr><w:t xml:space="preserve">${X(t)}</w:t></w:r>`}).join('');
+}
+function para(s,o={}){const ind=o.ind?`<w:ind w:left="${o.ind}" w:hanging="${o.hang||0}"/>`:'';return `<w:p><w:pPr><w:spacing w:before="${o.bf||0}" w:after="${o.af??120}"/>${ind}</w:pPr>${runs(s,o)}</w:p>`}
+function docxBody(){
+ let b=para(DOC_TITLE,{b:1,sz:34,c:'1F4FA3',af:200});
+ for(const k of C){
+  if(k.t==='h2')b+=para(k.x,{b:1,sz:30,c:'1F4FA3',bf:260,af:100});
+  else if(k.t==='p')b+=para(k.x,{sz:24});
+  else if(k.t==='ul')k.i.forEach(i=>b+=para('•\u00A0\u00A0'+i,{sz:24,ind:600,hang:300,af:80}));
+ }
+ b+=para('Mi revisión',{b:1,sz:30,c:'1F4FA3',bf:360,af:100});
+ answers().forEach(([l,v])=>{
+  if(l[0]==='#')b+=para(l.slice(1),{b:1,sz:26,c:'2B6CB0',bf:200,af:60});
+  else{b+=para('**'+l+':**',{sz:24,af:30});v.split('\n').forEach(x=>b+=para(x,{sz:24,af:40,c:v.startsWith('(sin')?'888888':'000000'}))}
+ });
+ return b+para('Fecha: '+new Date().toLocaleDateString('es-AR'),{sz:20,c:'666666',bf:200});
+}
+function crc(b){let t=crc.t;if(!t){t=crc.t=[];for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c>>>0}}let r=-1;for(let i=0;i<b.length;i++)r=t[(r^b[i])&255]^(r>>>8);return(r^-1)>>>0}
+function zip(files){
+ const enc=new TextEncoder(),parts=[],cd=[];let off=0;
+ for(const[name,str]of files){
+  const nb=enc.encode(name),d=enc.encode(str),c=crc(d);
+  const lh=new DataView(new ArrayBuffer(30));
+  lh.setUint32(0,0x04034b50,true);lh.setUint16(4,20,true);lh.setUint16(6,0x0800,true);lh.setUint16(12,0x21,true);lh.setUint32(14,c,true);lh.setUint32(18,d.length,true);lh.setUint32(22,d.length,true);lh.setUint16(26,nb.length,true);
+  parts.push(new Uint8Array(lh.buffer),nb,d);
+  const ch=new DataView(new ArrayBuffer(46));
+  ch.setUint32(0,0x02014b50,true);ch.setUint16(4,20,true);ch.setUint16(6,20,true);ch.setUint16(8,0x0800,true);ch.setUint16(14,0x21,true);ch.setUint32(16,c,true);ch.setUint32(20,d.length,true);ch.setUint32(24,d.length,true);ch.setUint16(28,nb.length,true);ch.setUint32(42,off,true);
+  cd.push(new Uint8Array(ch.buffer),nb);
+  off+=30+nb.length+d.length;
+ }
+ const cdl=cd.reduce((a,b)=>a+b.length,0),e=new DataView(new ArrayBuffer(22));
+ e.setUint32(0,0x06054b50,true);e.setUint16(8,files.length,true);e.setUint16(10,files.length,true);e.setUint32(12,cdl,true);e.setUint32(16,off,true);
+ return new Blob([...parts,...cd,new Uint8Array(e.buffer)]);
+}
+function toDocx(){
+ const W='xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"';
+ return zip([
+  ['[Content_Types].xml','<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/></Types>'],
+  ['_rels/.rels','<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/></Relationships>'],
+  ['word/document.xml','<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document '+W+'><w:body>'+docxBody()+'<w:sectPr><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="1134" w:right="1134" w:bottom="1134" w:left="1134" w:header="708" w:footer="708" w:gutter="0"/></w:sectPr></w:body></w:document>']
+ ]);
+}
+
+/* ---- guardar e imprimir ---- */
+function say(t,err){const m=$('msg');m.textContent=t;m.className=err?'err':''}
+const fn=ext=>{const n=$('coord').value.trim().split(/[,;]/)[0].replace(/[^\wÁÉÍÓÚáéíóúñÑ ]/g,'').trim().replace(/\s+/g,'_');return 'Fase4_Revision'+(n?'_'+n:'')+'.'+ext};
+async function dl(name,make){
+ if(!$('coord').value.trim()){say('Antes de guardar, asignen un coordinador/a del equipo.',1);return}
+ let d=null;try{d=await claude.use('downloads')}catch(e){}
+ const data=make();
+ if(d){
+  try{await d.save({filename:name,data});say('✔ Archivo listo: '+name)}
+  catch(e){say(e&&e.code==='declined'?'Descarga cancelada.':'No se pudo guardar ('+(e&&e.code||'error')+').',1)}
+  return;
+ }
+ const blob=data instanceof Blob?data:new Blob([data],{type:'text/plain;charset=utf-8'});
+ const a=document.createElement('a');
+ a.href=URL.createObjectURL(blob);a.download=name;
+ document.body.appendChild(a);a.click();a.remove();
+ setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+ say('✔ Archivo descargado: '+name);
+}
+function cleanPrint(){document.querySelectorAll('.pv').forEach(d=>d.remove())}
+function prepPrint(){
+ cleanPrint();
+ document.querySelectorAll('input,textarea,select').forEach(e=>{
+  const d=document.createElement('div');d.className='pv';
+  d.textContent=e.value.trim()?e.value:'\u00A0';
+  e.insertAdjacentElement('afterend',d);
+ });
+}
+window.addEventListener('beforeprint',prepPrint);
+window.addEventListener('afterprint',cleanPrint);
+$('bDocx').onclick=()=>dl(fn('docx'),toDocx);
+$('bTxt').onclick=()=>dl(fn('txt'),toTxt);
+$('bPrint').onclick=()=>{try{prepPrint();window.print()}catch(e){say('Imprimir no está disponible en esta vista.',1)}};
+$('bClear').onclick=()=>{if(!confirm('¿Borrar toda la revisión de esta fase?'))return;F.forEach(k=>$(k).value='');Cor.el.innerHTML='';Cor.add();save();prog();paint();say('Revisión borrada.')};
+</script>
+</body>
+</html>
