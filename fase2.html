@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
 <title>Fase 2 – Diseño de la Solución y Uso Reflexivo de IA</title>
 <style>
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f7f6f2;--card:#fff;--ink:#1d2433;--mute:#5d6678;--acc:#1f6feb;--acc2:#e8f0fe;--line:#dcdfe6;--ok:#1a7f4b}
@@ -39,13 +40,32 @@ button{font:inherit;font-weight:600;border:0;border-radius:10px;padding:11px 18p
 button.alt{background:var(--acc2);color:var(--acc)}
 #msg{margin-top:12px;min-height:1.4em;color:var(--ok);font-weight:600}
 #msg.err{color:#d1453b}
-footer{text-align:center;color:var(--mute);font-size:.85rem;padding-bottom:30px}
-@media print{nav,.btns,#msg{display:none}section{break-inside:avoid}}
+footer{text-align:center;color:var(--mute);font-size:.85rem;padding:0 16px 30px;line-height:1.7}
+nav a.home{font-weight:700;color:var(--acc)}
+.pie-nav{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;margin-top:22px}
+.pie-nav a{text-decoration:none;font-weight:600;border-radius:10px;padding:11px 18px;background:var(--acc2);color:var(--acc)}
+.pie-nav a.next{background:var(--acc);color:#fff}
+.pv{display:none}
+@media print{
+ nav,.btns,.pie-nav,#msg,header a{display:none!important}
+ body{background:#fff;color:#000;font-size:12pt}
+ header{background:#fff;color:#000;padding:0 0 10pt;border-bottom:1px solid #999}
+ main{max-width:none;padding:0}
+ section{border:0;border-radius:0;padding:0;margin:0 0 14pt;break-inside:auto}
+ h2,h3{break-after:avoid}
+ p,li,tr,.br,.callout{break-inside:avoid}
+ .tw{overflow:visible}
+ table{min-width:0;table-layout:fixed}
+ th,td{overflow-wrap:anywhere;word-break:break-word}
+ pre{white-space:pre-wrap;overflow:visible;word-break:break-word}
+ input,textarea{display:none!important}
+ .pv{display:block;white-space:pre-wrap;overflow-wrap:anywhere;border:1px solid #999;border-radius:6px;padding:6px 9px;margin:0 0 6pt}
+}
 </style>
 </head>
 <body>
-<header><a href="index.html">← Todas las fases</a><br><small>Cuadernillo · Fase 2</small><h1>Diseño de la Solución y Uso Reflexivo de Inteligencia Artificial</h1><div>Educación Tecnológica y Ciencias de la Computación · 3.er Año A / B</div></header>
-<nav><a href="#s0">0. Equipo</a><a href="#s1">1. Lógica del diseño</a><a href="#s2">2. IA en el proyecto</a><a href="#s3">3. Actividades</a><a href="#act">Mi trabajo</a></nav>
+<header><a href="index.html">← Todas las fases</a><br><small>Soluciones con sentido: innovación para mi comunidad · Fase 2</small><h1>Diseño de la Solución y Uso Reflexivo de Inteligencia Artificial</h1><div>Educación Tecnológica y Ciencias de la Computación · 3.er Año A / B</div></header>
+<nav><a class="home" href="index.html">← Fases</a><a href="#s0">0. Equipo</a><a href="#s1">1. Lógica del diseño</a><a href="#s2">2. IA en el proyecto</a><a href="#s3">3. Actividades</a><a href="#act">Mi trabajo</a><a href="fase3.html">Fase 3 →</a></nav>
 <main>
 <div id="content"></div>
 <section id="act">
@@ -69,13 +89,14 @@ footer{text-align:center;color:var(--mute);font-size:.85rem;padding-bottom:30px}
 <div class="btns">
 <button id="bDocx">⬇ Guardar en Word (.docx)</button>
 <button id="bTxt" class="alt">⬇ Guardar en texto (.txt)</button>
-<button id="bPrint" class="alt">🖨 Imprimir / PDF</button>
+<button id="bPrint" class="alt">🖨 Guardar como PDF</button>
 <button id="bClear" class="alt">Borrar mi trabajo</button>
 </div>
 <div id="msg" role="status"></div>
+<div class="pie-nav"><a href="fase1.html">← Fase 1</a><a class="next" href="fase3.html">Continuar con la Fase 3 →</a></div>
 </section>
 </main>
-<footer>Fase 2 · Docente: Esp. Ing. Astri Edith Andrada Tivani</footer>
+<footer>Fase 2 · Instituto Nuestra Señora del Carmen · Uso exclusivo institucional<br>Diseñado por Esp. Ing. Astri Edith Andrada Tivani · 3.er año, nivel secundario</footer>
 <script>
 const DOC_TITLE="Fase 2 - Diseño de la Solución y Uso Reflexivo de IA";
 const C=[
@@ -279,7 +300,18 @@ async function dl(name,make){
 const fn=ext=>{const n=$('coord').value.trim().split(/[,;]/)[0].replace(/[^\wÁÉÍÓÚáéíóúñÑ ]/g,'').trim().replace(/\s+/g,'_');return 'Fase2_Diseno_IA'+(n?'_'+n:'')+'.'+ext};
 $('bDocx').onclick=()=>dl(fn('docx'),toDocx);
 $('bTxt').onclick=()=>dl(fn('txt'),toTxt);
-$('bPrint').onclick=()=>{try{window.print()}catch(e){say('Imprimir no está disponible en esta vista.',1)}};
+function cleanPrint(){document.querySelectorAll('.pv').forEach(d=>d.remove())}
+function prepPrint(){
+ cleanPrint();
+ document.querySelectorAll('input,textarea').forEach(e=>{
+  const d=document.createElement('div');d.className='pv';
+  d.textContent=e.value.trim()?e.value:'\u00A0';
+  e.insertAdjacentElement('afterend',d);
+ });
+}
+window.addEventListener('beforeprint',prepPrint);
+window.addEventListener('afterprint',cleanPrint);
+$('bPrint').onclick=()=>{try{prepPrint();window.print()}catch(e){say('Imprimir no está disponible en esta vista.',1)}};
 $('bClear').onclick=()=>{if(!confirm('¿Borrar todo tu trabajo de esta fase?'))return;F.forEach(k=>$(k).value='');$('bit').innerHTML='';addRow();save();say('Trabajo borrado.')};
 </script>
 </body>
